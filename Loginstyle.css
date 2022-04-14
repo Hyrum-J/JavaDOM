@@ -1,0 +1,21 @@
+body{
+
+    background-color: darkgray;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.button{
+
+    background-color: rgb(39, 20, 167);
+
+    width: 150px;
+
+    height: 30px;
+
+    border-color: forestgreen;
+
+    border-radius: 12px;
+    
+}

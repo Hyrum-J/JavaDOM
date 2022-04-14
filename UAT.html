@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<!--
+    UAT Space Page.html - used to test out tags in html
+    Hyrum D. Johnson
+    hyrdavis@uat.edu
+-->
+<head>
+    <Title>
+        Hyrum's UAT Space Page
+    </Title>
+    <link rel = "stylesheet" href = "Style.css">
+    <script src="code.js">
+    </script>
+    <script src = "classCode.js">
+    </script>
+    <script src = "launchTable.js">
+    </script>
+    <script src = "dataLoader.js">
+    </script>
+    
+    <script>
+        var theTime = new Date();
+        var tempTime = new Date();
+        var time_interval = 5000;
+        var last_iteration = 0;
+        var running = true;
+        var index = 0;
+        var timer;
+        var data = getData();
+    </script>
+</head>
+
+<Body>
+    <table>
+        <td>
+            <img src=UATSpaceLogo-1.jpg>
+        </td>
+        <td>
+            <h1>
+                UAT Space Program
+            </h1>
+        </td>
+    </table>
+    <br>
+    <br>
+<table id = "data" border = "2" width = "70%">
+<col style = "width: 35%">
+<col style = "width: 35%">
+    <thead>
+        <th>
+            Data Type
+        </th>
+        <th>
+            Reading
+        </th>
+    </thead>
+
+    <tbody>
+        <tr id = "seconds">
+        </tr>
+        <tr id = "latitude">
+        </tr>
+        <tr id = "Longitude">
+        </tr>
+        <tr id = "GPSALT">
+        </tr>
+        <tr id = "BMPALT">
+        </tr>
+        <tr id = "BMPPRESS">
+        </tr>
+        <tr id = "BMPTEMP">
+        </tr>
+        <tr id = "DIGTEMP">
+        </tr>
+        <tr id = "CSSTEMP">
+        </tr>
+        <tr id = "CSSCO2">
+        </tr>
+        <tr id = "CSSTVOC">
+        </tr>
+        <tr id = "UV">
+        </tr>
+        <tr id = "ACCELX">
+        </tr>
+        <tr id = "ACCELY">
+        </tr>
+        <tr id = "ACCELZ">
+        </tr>
+        <tr id = "MAGX">
+        </tr>
+        <tr id = "MAGY">
+        </tr>
+        <tr id = "MAGZ">
+        </tr>
+        <tr id = "GYROX">
+        </tr>
+        <tr id = "GYROY">
+        </tr>
+        <tr id = "GYROZ">
+        </tr>
+    </tbody>
+
+</table>
+    <br>
+    The current time is: <div id = "clockTime">
+        Press start for current time
+    </div>
+    <br>
+    <br>
+    <button id = "startbutton" onclick = "start();" class = "button">
+        Start
+    </button>
+    <button id = "stopbutton" onclick = "stop();" class = "button">
+        Stop
+    </button>
+    <br>
+    <br>
+    <div id = "blink">
+        Let's Play Craps
+    </div>
+    <script type="text/javascript">
+        var blink = document.getElementById('blink');
+        setInterval(function() {
+            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+        }, 250);
+    </script>
+    <br>
+    <!--
+    This is the button that allows the function to start. When clicked it will start the play()
+    function in Java script, which will play craps.
+    -->
+    <button onclick="play()"class = "button">
+        Play 
+    </button>
+    <button onclick="reset()" class = "button">
+        Reset
+    </button>
+    <br>
+    <br>
+    <!--
+        The following are the locations of the results. 
+        Die 1 is the first die that is rolled and it displays the numbers. 
+        Die 2 is the second die that is rolled and displays the numbers. 
+        Sum takes one and two and adds them together and displays the sum. 
+        Win is where it will tell the player if they win, lose, or push.
+        Win Count tells the player how many times they've won. 
+        Loss Count tells the player how many times they've lost.
+        Push Count tells the player how many times it was a push. 
+        All the br are breaks to give space to the page. 
+    -->
+    <div id="die one">
+        Die 1
+    </div>
+    <br>
+    <div id="die two">
+        Die 2
+    </div>
+    <br>
+    <div id="Sums">
+        Sum
+    </div>
+    <br>
+    <div id="Win">
+    </div>
+    <br>
+    <div id = "Win count">
+        Wins: 0 
+    </div>
+    <br>
+    <div id = "loss count">
+        Losses: 0
+    </div>
+    <br>
+    <div id = "push count">
+        Pushes: 0
+    </div>
+    <br>
+    <br>
+    <button class = "lgbutton" onclick = "playMusic();">
+        Play Music
+    </button>
+    <br>
+    <br>
+    <script>
+        var springLaunch = new Mission("To Boldly Go... ", 19, 17, 3, 2022, "Shrek", 3);
+        var fallLaunch = new Mission("To Boldly Come Home...", 30, 11, 11, 2022, "Donkey", 5);
+    </script>
+
+    <button class = "button" onclick = "launchFall()">
+        Fall Launch
+    </button>
+    <button class = "button" onclick = "displayFall()">
+        Fall Display
+    </button>
+    <button class = "button" onclick = "launchSpring()">
+        Spring Launch
+    </button>
+    <button class = "button" onclick = "displaySpring()">
+        Spring Display
+    </button>
+</Body>
+</html>
